@@ -14,12 +14,14 @@ public class MoveToClickPoint : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
+            
             RaycastHit hit;
             Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(camRay, out hit, 100))
             {
                 agent.destination = hit.point;
+                Debug.Log("works fanta");
             }
         }
 	}
